@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Installation on FreeNAS 9.10"
+title: "Installation on FreeNAS 11"
 description: "Installation of Home Assistant on your FreeNAS."
 date: 2017-06-20 11:00
 sidebar: true
@@ -29,10 +29,16 @@ Install Home Assistant itself.
 # pip3 install homeassistant
 ```
 
+Start Home Assistant for the first time. The config folder will be created automatically.
+
+```bash
+# /usr/local/bin/hass --open-ui
+```
+
 Create an `/etc/rc.local` file to enable Home Assistant to start when the jail starts. The command in `/etc/rc.local` can also be run in a terminal session but Home Assistant will exit when that session is closed.  
 
 ```bash
-# /usr/local/bin/hass --open-ui --config /home/.homeassistant/ &
+# /usr/local/bin/hass --open-ui --config /root/.homeassistant/ &
 ```
 
 Make `/etc/rc.local` executable so it runs on startup
